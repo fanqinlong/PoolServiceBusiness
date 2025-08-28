@@ -1,0 +1,221 @@
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 12px;
+  --background: #f7f8fa;
+  --foreground: #333333;
+  --card: #ffffff;
+  --card-foreground: #333333;
+  --popover: #ffffff;
+  --popover-foreground: #333333;
+  --primary: #ff6a00;
+  --primary-foreground: #ffffff;
+  --secondary: #f7f8fa;
+  --secondary-foreground: #999999;
+  --muted: #f7f8fa;
+  --muted-foreground: #999999;
+  --accent: #fff7f0;
+  --accent-foreground: #ff6a00;
+  --destructive: #f5222d;
+  --destructive-foreground: #ffffff;
+  --border: #e8e8e8;
+  --input: #ffffff;
+  --input-background: #ffffff;
+  --switch-background: #dcdee2;
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: #ff6a00;
+  --chart-1: #ff6a00;
+  --chart-2: #52c41a;
+  --chart-3: #1890ff;
+  --chart-4: #f5222d;
+  --chart-5: #999999;
+  --radius: 4px;
+  
+  /* Alibaba Cloud specific colors */
+  --aliyun-orange: #ff6a00;
+  --aliyun-orange-light: #fff7f0;
+  --aliyun-orange-dark: #d44800;
+  --aliyun-blue: #1890ff;
+  --aliyun-green: #52c41a;
+  --aliyun-red: #f5222d;
+  --aliyun-gray-1: #fafafa;
+  --aliyun-gray-2: #f5f5f5;
+  --aliyun-gray-3: #f0f0f0;
+  --aliyun-gray-4: #d9d9d9;
+  --aliyun-gray-5: #bfbfbf;
+  --aliyun-gray-6: #8c8c8c;
+  --aliyun-gray-7: #595959;
+  --aliyun-gray-8: #434343;
+  --aliyun-gray-9: #262626;
+  --aliyun-gray-10: #1f1f1f;
+  
+  /* Updated sidebar colors to match the screenshot */
+  --sidebar-bg: #ffffff;
+  --sidebar-menu-bg: #ffffff;
+  --sidebar-text: #333333;
+  --sidebar-active-text: #ffffff;
+  --sidebar-active-bg: #1890ff;
+  --sidebar-hover-bg: #f5f5f5;
+  --sidebar-border: #e8e8e8;
+  --sidebar-separator: #f0f0f0;
+  --navbar-bg: #ffffff;
+  --navbar-brand-bg: #ff6a00;
+  --navbar-border: #e8e8e8;
+  --navbar-shadow: 0 2px 8px rgba(0,0,0,.1);
+  --content-bg: #f7f8fa;
+  --card-shadow: 0 2px 8px rgba(0,0,0,.1);
+  --table-stripe: #fafafa;
+  --table-hover: #e6f7ff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-lg: 6px;
+  --radius-xl: 8px;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+  }
+}
+
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: 20px;
+      font-weight: var(--font-weight-medium);
+      line-height: 1.4;
+      color: #262626;
+    }
+
+    h2 {
+      font-size: 16px;
+      font-weight: var(--font-weight-medium);
+      line-height: 1.4;
+      color: #262626;
+    }
+
+    h3 {
+      font-size: 14px;
+      font-weight: var(--font-weight-medium);
+      line-height: 1.4;
+      color: #262626;
+    }
+
+    h4 {
+      font-size: 13px;
+      font-weight: var(--font-weight-medium);
+      line-height: 1.4;
+      color: #262626;
+    }
+
+    p {
+      font-size: 12px;
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+      color: #595959;
+    }
+
+    label {
+      font-size: 12px;
+      font-weight: var(--font-weight-normal);
+      line-height: 1.4;
+      color: #595959;
+    }
+
+    button {
+      font-size: 12px;
+      font-weight: var(--font-weight-normal);
+      line-height: 1.4;
+    }
+
+    input {
+      font-size: 12px;
+      font-weight: var(--font-weight-normal);
+      line-height: 1.4;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+/* Aliyun style scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d9d9d9;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #bfbfbf;
+}
+
+/* Aliyun table styles */
+.aliyun-table tbody tr:nth-child(odd) {
+  background-color: var(--table-stripe);
+}
+
+.aliyun-table tbody tr:hover {
+  background-color: var(--table-hover);
+}
+
+/* Aliyun brand gradient */
+.aliyun-brand-gradient {
+  background: linear-gradient(135deg, #ff6a00 0%, #ff8c00 100%);
+}
+
+/* Aliyun card shadow */
+.aliyun-card-shadow {
+  box-shadow: 0 2px 8px rgba(0,0,0,.1);
+}
+
+/* Aliyun sidebar styles */
+.aliyun-sidebar-separator {
+  height: 1px;
+  background: var(--sidebar-separator);
+  margin: 4px 0;
+}
